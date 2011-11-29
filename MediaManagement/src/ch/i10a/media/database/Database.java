@@ -18,27 +18,13 @@ public class Database {
 		private String firstName;
 		private String lastName;
 	}
+	
+	private class Rating {
+		private int rId;
+		private String rateName;
+		private int rating;
+		private String ratingText;
+	}
+	
 
 }
-
-
-					
-							
-Folgen							
-F-ID	Folge	Beschreibung	Jahr	Speicherort	Aufnahme-Datum	M-ID	
-ID (auto Increment)	Text	Text	Year	Text	Date	ID	
-							
-hat							
-F-ID	Bewertungs-ID						
-ID	ID						
-							
-Bewertungen							
-Bewertungs-ID	Bewertung	Bewerter					
-ID (auto Increment)	SmallInt	Text					
-							
-Kategorien							
-Kategorie	M-ID						
-Text	ID						
-							
-Sprachen	M-ID						
-Sprache	ID						
