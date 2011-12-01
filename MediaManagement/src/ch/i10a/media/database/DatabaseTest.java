@@ -1,8 +1,5 @@
 package ch.i10a.media.database;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
 
 public class DatabaseTest {
 
