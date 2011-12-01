@@ -43,6 +43,7 @@ public class StartSiteComposer extends GenericForwardComposer {
 		eastLabel.setValue("East");
 		westLabel.setValue("West");
 		southLabel.setValue("South");
+		//northLabel.setValue("North");
 	}
 
 	/*
