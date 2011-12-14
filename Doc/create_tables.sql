@@ -69,6 +69,59 @@ CREATE TABLE IF NOT EXISTS `movie` (
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `directs`
+--
+
+CREATE TABLE IF NOT EXISTS directs` (
+  `mId` int(11) DEFAULT NULL,
+`pId` int(11) DEFAULT NULL,
+  PRIMARY KEY `mId` (`mId`),
+  KEY `pId` (`pId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+
+--
+-- Tabellenstruktur für Tabelle actsin`
+--
+
+CREATE TABLE IF NOT EXISTS actsin` (
+  `mId` int(11) DEFAULT NULL,
+`pId` int(11) DEFAULT NULL,
+  PRIMARY KEY `mId` (`mId`),
+  KEY `pId` (`pId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle wroteScreenplay`
+--
+
+CREATE TABLE IF NOT EXISTS wroteScreenplay` (
+  `mId` int(11) DEFAULT NULL,
+`pId` int(11) DEFAULT NULL,
+  PRIMARY KEY `mId` (`mId`),
+  KEY `pId` (`pId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `has`
+--
+
+CREATE TABLE IF NOT EXISTS has` (
+  `eId` int(11) DEFAULT NULL,
+`rId` int(11) DEFAULT NULL,
+  PRIMARY KEY `eId` (`eId`),
+  KEY `rId` (`rId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `person`
 --
 
@@ -113,3 +166,38 @@ ALTER TABLE `episode`
 --
 ALTER TABLE `language`
   ADD CONSTRAINT `language_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+
+--
+-- Constraints der Tabelle `wroteScreenplay`
+--
+ALTER TABLE `wroteScreenplay`
+  ADD CONSTRAINT `wroteScreenplay_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+  ADD CONSTRAINT `wroteScreenplay_ibfk_2` FOREIGN KEY (`pId`) REFERENCES `person` (`pId`);
+
+
+--
+-- Constraints der Tabelle `actsin`
+--
+ALTER TABLE `actsin`
+  ADD CONSTRAINT `actsin_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+  ADD CONSTRAINT `actsin_ibfk_2` FOREIGN KEY (`pId`) REFERENCES `person` (`pId`);
+
+--
+-- Constraints der Tabelle `directs`
+--
+ALTER TABLE `directs`
+  ADD CONSTRAINT `directs_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+  ADD CONSTRAINT `directs_ibfk_2` FOREIGN KEY (`pId`) REFERENCES `person` (`pId`);
+
+
+--
+-- Constraints der Tabelle `has`
+--
+ALTER TABLE `has`
+  ADD CONSTRAINT `has_ibfk_1` FOREIGN KEY (`eId`) REFERENCES `episodes` (`eId`);
+  ADD CONSTRAINT `has_ibfk_2` FOREIGN KEY (`rId`) REFERENCES `rating` (`rId`);
+
+
+
+
+
