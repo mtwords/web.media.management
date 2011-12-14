@@ -1,1 +1,0 @@
-DELETE FROM `mmangement`.`movie` WHERE `movie`.`title` LIKE `American Beauty`;
