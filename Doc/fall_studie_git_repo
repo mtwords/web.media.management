@@ -17,3 +17,18 @@ git commit -a
 "Test"
 git push origin master
 ---------
+
+Fehler: Permission denied (publickey). + Agent admitted failure to sign using the key.
+Achtung, die ssh keys dürfen nicht auf chmod 777 gesetzt werden, sondern nur auf chmod700, sonst nimmt git die ssh nicht.
+Oder man kann die Keys speziel angeben mit: ssh-add ~/.ssh/id_rsa
+--------------
+neuer ssh-key erstellen
+cd ~./ssh
+ssh-keygen -T rsa -C "yzerman.detroit@bluewin.ch"
+Danach den inhalt von id_rsa.pub auf der githomepage in account settings hinzufügen.
+Danach testen via pull oder ssh -vT git@github.com
+
+-----------------
+//Konsole aufrufen im git projekt
+gitk
+
