@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `movie` (
   `type` smallint(6) NOT NULL,
   `keywords` varchar(1024) COLLATE utf8_bin NOT NULL,
   `description` mediumblob NOT NULL,
-  PRIMARY KEY (`mId`),
+  PRIMARY KEY `mId`(`mId`),
   KEY `fk_mId` (`mId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
@@ -72,9 +72,9 @@ CREATE TABLE IF NOT EXISTS `movie` (
 -- Tabellenstruktur für Tabelle `directs`
 --
 
-CREATE TABLE IF NOT EXISTS directs` (
+CREATE TABLE IF NOT EXISTS `directs` (
   `mId` int(11) DEFAULT NULL,
-`pId` int(11) DEFAULT NULL,
+  `pId` int(11) DEFAULT NULL,
   PRIMARY KEY `mId` (`mId`),
   KEY `pId` (`pId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS directs` (
 -- Tabellenstruktur für Tabelle actsin`
 --
 
-CREATE TABLE IF NOT EXISTS actsin` (
+CREATE TABLE IF NOT EXISTS `actsin` (
   `mId` int(11) DEFAULT NULL,
 `pId` int(11) DEFAULT NULL,
   PRIMARY KEY `mId` (`mId`),
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS actsin` (
 -- Tabellenstruktur für Tabelle wroteScreenplay`
 --
 
-CREATE TABLE IF NOT EXISTS wroteScreenplay` (
+CREATE TABLE IF NOT EXISTS `wroteScreenplay` (
   `mId` int(11) DEFAULT NULL,
 `pId` int(11) DEFAULT NULL,
   PRIMARY KEY `mId` (`mId`),
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS wroteScreenplay` (
 -- Tabellenstruktur für Tabelle `has`
 --
 
-CREATE TABLE IF NOT EXISTS has` (
+CREATE TABLE IF NOT EXISTS `has` (
   `eId` int(11) DEFAULT NULL,
 `rId` int(11) DEFAULT NULL,
   PRIMARY KEY `eId` (`eId`),
