@@ -1,6 +1,6 @@
 MediaManagement/target/
-MediaManagement/bin/
 MediaManagement/build/
+bin/
 ZKs/
 Servers/
 .classpath
