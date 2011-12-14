@@ -8,7 +8,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `category`
+-- Tabellenstruktur fï¿½r Tabelle `category`
 --
 
 CREATE TABLE IF NOT EXISTS `category` (
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `episode`
+-- Tabellenstruktur fï¿½r Tabelle `episode`
 --
 
 CREATE TABLE IF NOT EXISTS `episode` (
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `episode` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `language`
+-- Tabellenstruktur fï¿½r Tabelle `language`
 --
 
 CREATE TABLE IF NOT EXISTS `language` (
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `language` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `movie`
+-- Tabellenstruktur fï¿½r Tabelle `movie`
 --
 
 CREATE TABLE IF NOT EXISTS `movie` (
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `movie` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `directs`
+-- Tabellenstruktur fï¿½r Tabelle `directs`
 --
 
 CREATE TABLE IF NOT EXISTS `directs` (
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `directs` (
 
 
 --
--- Tabellenstruktur für Tabelle actsin`
+-- Tabellenstruktur fï¿½r Tabelle actsin`
 --
 
 CREATE TABLE IF NOT EXISTS `actsin` (
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `actsin` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle wroteScreenplay`
+-- Tabellenstruktur fï¿½r Tabelle wroteScreenplay`
 --
 
 CREATE TABLE IF NOT EXISTS `wroteScreenplay` (
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `wroteScreenplay` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `has`
+-- Tabellenstruktur fï¿½r Tabelle `has`
 --
 
 CREATE TABLE IF NOT EXISTS `has` (
@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `has` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `person`
+-- Tabellenstruktur fï¿½r Tabelle `person`
 --
 
 CREATE TABLE IF NOT EXISTS `person` (
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `person` (
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `rating`
+-- Tabellenstruktur fï¿½r Tabelle `rating`
 --
 
 CREATE TABLE IF NOT EXISTS `rating` (
