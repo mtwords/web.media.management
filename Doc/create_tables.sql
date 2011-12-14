@@ -166,3 +166,38 @@ ALTER TABLE `episode`
 --
 ALTER TABLE `language`
   ADD CONSTRAINT `language_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+
+--
+-- Constraints der Tabelle `wroteScreenplay`
+--
+ALTER TABLE `wroteScreenplay`
+  ADD CONSTRAINT `wroteScreenplay_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+  ADD CONSTRAINT `wroteScreenplay_ibfk_2` FOREIGN KEY (`pId`) REFERENCES `person` (`pId`);
+
+
+--
+-- Constraints der Tabelle `actsin`
+--
+ALTER TABLE `actsin`
+  ADD CONSTRAINT `actsin_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+  ADD CONSTRAINT `actsin_ibfk_2` FOREIGN KEY (`pId`) REFERENCES `person` (`pId`);
+
+--
+-- Constraints der Tabelle `directs`
+--
+ALTER TABLE `directs`
+  ADD CONSTRAINT `directs_ibfk_1` FOREIGN KEY (`mId`) REFERENCES `movie` (`mId`);
+  ADD CONSTRAINT `directs_ibfk_2` FOREIGN KEY (`pId`) REFERENCES `person` (`pId`);
+
+
+--
+-- Constraints der Tabelle `has`
+--
+ALTER TABLE `has`
+  ADD CONSTRAINT `has_ibfk_1` FOREIGN KEY (`eId`) REFERENCES `episodes` (`eId`);
+  ADD CONSTRAINT `has_ibfk_2` FOREIGN KEY (`rId`) REFERENCES `rating` (`rId`);
+
+
+
+
+
