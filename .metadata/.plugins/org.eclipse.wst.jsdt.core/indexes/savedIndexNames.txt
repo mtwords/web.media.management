@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+F:\web.media.management\web.media.management\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+545564198.index
+4030327180.index
+3734706676.index
+3727429989.index
+941509658.index
