@@ -1,4 +1,8 @@
 MediaManagement/target/
+MediaManagement/bin/
 MediaManagement/build/
 ZKs/
 Servers/
+.classpath
+MediaManagement/.classpath
+MediaManagement/.project
