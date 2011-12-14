@@ -1,0 +1,34 @@
+1. mkdir web.media.management
+2. cd web.media.management
+3. git init
+4. git remote add origin git@github.com:mtwords/web.media.management.git
+5. git clone git@github.com:mtwords/web.media.management.git
+----------- test (neue Datei reinladen)-------------
+6. touch Readme.txt
+7. git add Readme.txt
+8. git commit
+9. git push origin master
+
+----geänderte Datei updaten----
+vi Readme.txt
+git push origin master
+Everything up-to-date
+git commit -a
+"Test"
+git push origin master
+---------
+
+Fehler: Permission denied (publickey). + Agent admitted failure to sign using the key.
+Achtung, die ssh keys dürfen nicht auf chmod 777 gesetzt werden, sondern nur auf chmod700, sonst nimmt git die ssh nicht.
+Oder man kann die Keys speziel angeben mit: ssh-add ~/.ssh/id_rsa
+--------------
+neuer ssh-key erstellen
+cd ~./ssh
+ssh-keygen -T rsa -C "yzerman.detroit@bluewin.ch"
+Danach den inhalt von id_rsa.pub auf der githomepage in account settings hinzufügen.
+Danach testen via pull oder ssh -vT git@github.com
+
+-----------------
+//Konsole aufrufen im git projekt
+gitk
+

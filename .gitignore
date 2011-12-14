@@ -1,0 +1,9 @@
+MediaManagement/target/
+MediaManagement/build/
+bin/
+.metadata/
+ZKs/
+Servers/
+.classpath
+MediaManagement/.classpath
+MediaManagement/.project
