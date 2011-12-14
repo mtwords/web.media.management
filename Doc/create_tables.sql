@@ -69,6 +69,59 @@ CREATE TABLE IF NOT EXISTS `movie` (
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `directs`
+--
+
+CREATE TABLE IF NOT EXISTS directs` (
+  `mId` int(11) DEFAULT NULL,
+`pId` int(11) DEFAULT NULL,
+  PRIMARY KEY `mId` (`mId`),
+  KEY `pId` (`pId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+
+--
+-- Tabellenstruktur für Tabelle actsin`
+--
+
+CREATE TABLE IF NOT EXISTS actsin` (
+  `mId` int(11) DEFAULT NULL,
+`pId` int(11) DEFAULT NULL,
+  PRIMARY KEY `mId` (`mId`),
+  KEY `pId` (`pId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle wroteScreenplay`
+--
+
+CREATE TABLE IF NOT EXISTS wroteScreenplay` (
+  `mId` int(11) DEFAULT NULL,
+`pId` int(11) DEFAULT NULL,
+  PRIMARY KEY `mId` (`mId`),
+  KEY `pId` (`pId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `has`
+--
+
+CREATE TABLE IF NOT EXISTS has` (
+  `eId` int(11) DEFAULT NULL,
+`rId` int(11) DEFAULT NULL,
+  PRIMARY KEY `eId` (`eId`),
+  KEY `rId` (`rId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `person`
 --
 

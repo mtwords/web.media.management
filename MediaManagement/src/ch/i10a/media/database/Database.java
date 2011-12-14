@@ -1,6 +1,15 @@
 package ch.i10a.media.database;
 
+import java.util.ArrayList;
+
 public class Database {
+	
+	public Database() {
+		Movie movie = new Movie();
+		Rating rating = new Rating();
+		Person person = new Person();
+
+	}
 	
 	private class Movie { 
 		private int mId;
@@ -11,6 +20,12 @@ public class Database {
 		private String genre;
 		private String[] searchTerms;
 		private String description;
+		ArrayList<Person> actors;
+		
+		public Movie() {
+			actors = new ArrayList<Person>();
+			
+		}
 		
 		/* Setter methods for the inner class Movie */
 		public void setMovieId(int id) {
