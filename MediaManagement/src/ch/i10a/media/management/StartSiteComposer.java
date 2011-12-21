@@ -6,6 +6,8 @@ import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Label;
 
+import ch.i10a.media.management.util.MediaManagementUtil;
+
 public class StartSiteComposer extends GenericForwardComposer {
 
 	/*
@@ -40,10 +42,7 @@ public class StartSiteComposer extends GenericForwardComposer {
 	@Override
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
-		eastLabel.setValue("East");
-		westLabel.setValue("West");
-		southLabel.setValue("South");
-		//northLabel.setValue("North");
+		MediaManagementUtil.updateMainContent();
 	}
 
 	/*
@@ -53,6 +52,5 @@ public class StartSiteComposer extends GenericForwardComposer {
 	 * decken!
 	 */
 	public void onClick$button(Event e) {
-		button.setLabel("Click: " + ++clickCount);
 	}
 }

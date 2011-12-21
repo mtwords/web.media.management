@@ -1,0 +1,56 @@
+/* general */
+ul li {
+	display: inline;
+	list-style: none;
+}
+
+a:link {
+	color: black;
+}
+a:visited {
+	color: black;
+}
+
+/* Navigation */
+div#navigation {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	top: 50px;
+}
+ul#navigationBar {
+	background-repeat: repeat-x;
+	list-style-type: none;
+	padding-left: 0px;
+	float: left;
+}
+li.navigationLi {
+	padding: 2px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+li.navigationLi:hover {
+	background-color: lightblue;
+}
+a.navigationLink {
+	margin: 5px;
+}
+
+div#searchField {
+	float: right;
+	padding-top: 10px;
+	padding-bottom: 8px;
+	margin: 5px;
+}
+
+/* Main starting page */
+div#welcomeTitle {
+	margin: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+.mainState {
+	margin-left: 20%;
+	margin-right: 20%;
+}

@@ -1,0 +1,27 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<?import src="includes/header.zul" directives="*" ?>
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<h:div>
+		<h:div id="navigation">
+			<h:ul id="navigationBar">
+				<h:li class="navigationLi" id="home">
+					<h:a class="navigationLink" href="">${c:l('field.navi.home')}</h:a>
+				</h:li>
+				<h:li class="navigationLi" id="editMedia">
+					<h:a class="navigationLink" href="">${c:l('field.navi.edit_media')}</h:a>
+				</h:li>
+				<h:li class="navigationLi" id="addMedia">
+					<h:a class="navigationLink" href="">${c:l('field.navi.add_media')}</h:a>
+				</h:li>
+				<h:li class="navigationLi" id="history">
+					<h:a class="navigationLink" href="">${c:l('field.navi.history')}</h:a>
+				</h:li>
+			</h:ul>
+			<h:div id="searchField">
+				<label value="${c:l('field.search')}" />
+				<textbox />
+				<button id="search" label="search" />
+			</h:div>
+		</h:div>
+	</h:div>
+</zk>

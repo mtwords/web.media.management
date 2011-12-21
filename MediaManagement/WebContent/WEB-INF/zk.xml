@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-	Created by ZK Studio
--->
-
 <zk>
+	<desktop-config>
+		<theme-uri>/themes/base.css</theme-uri>
+	</desktop-config>
+
 	<device-config>
 		<device-type>ajax</device-type>
 		<timeout-uri>/timeout.zul</timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->

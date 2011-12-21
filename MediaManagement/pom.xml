@@ -6,6 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.i10a.media.management</groupId>
 	<artifactId>MediaManagement</artifactId>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<repositories>
@@ -14,7 +15,24 @@
 			<name>ZK CE Repository</name>
 			<url>http://mavensync.zkoss.org/maven2</url>
 		</repository>
+		<repository>
+			<id>MySQL-Connector</id>
+			<name>MySQL JDBC Driver</name>
+			<url>http://mvnrepository.com/artifact/mysql/mysql-connector-java</url>
+		</repository>
 	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webXml>WebContent/WEB-INF/web.xml</webXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<!-- Dependencies -->
 
@@ -22,22 +40,17 @@
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zul</artifactId>
-			<version>6.0.0-RC</version>
+			<version>5.0.9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zkplus</artifactId>
-			<version>6.0.0-RC</version>
+			<version>5.0.9</version>
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zhtml</artifactId>
-			<version>6.0.0-RC</version>
-		</dependency>
-		<dependency>
-			<groupId>org.zkoss.zk</groupId>
-			<artifactId>zbind</artifactId>
-			<version>6.0.0-RC</version>
+			<version>5.0.9</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
@@ -53,6 +66,11 @@
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.18</version>
 		</dependency>
 	</dependencies>
 </project>
