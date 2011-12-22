@@ -3,6 +3,7 @@
     <wb-module deploy-name="MediaManagement">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
         <property name="context-root" value="MediaManagement"/>
         <property name="java-output-path" value="/MediaManagement/build/classes"/>
     </wb-module>

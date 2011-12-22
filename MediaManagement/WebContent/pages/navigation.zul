@@ -1,6 +1,6 @@
 <?page title="" contentType="text/html;charset=UTF-8"?>
 <?import src="includes/header.zul" directives="*" ?>
-<zk xmlns:h="http://www.w3.org/1999/xhtml">
+<zk xmlns:h="http://www.w3.org/1999/xhtml" apply="ch.i10a.media.management.NavigationComposer">
 	<h:div>
 		<h:div id="navigation">
 			<h:ul id="navigationBar">
@@ -19,8 +19,9 @@
 			</h:ul>
 			<h:div id="searchField">
 				<label value="${c:l('field.search')}" />
-				<textbox />
-				<button id="search" label="search" />
+				<combobox id="categorieChooser" width="100px"/>
+				<textbox id="searchBox" />
+				<button id="searchBtn" label="search" />
 			</h:div>
 		</h:div>
 	</h:div>

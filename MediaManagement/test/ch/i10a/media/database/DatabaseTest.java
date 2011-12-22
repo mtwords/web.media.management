@@ -6,10 +6,38 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.integration.junit4.JMock;
+import org.jmock.integration.junit4.JUnit4Mockery;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import ch.i10a.media.database.dao.IDao;
 
 
+@RunWith(JMock.class) 
 public class DatabaseTest {
+
+	Mockery context;
+	IDao dao;
+
+	@Before
+	public void initialize() {
+		context = new JUnit4Mockery();
+		dao = context.mock(IDao.class);
+	}
+
+	@Test
+	public void loadDatabaseObjectTest() {
+		context.checking(new Expectations() {
+			{
+				oneOf(dao).load();
+				will(returnValue(null));
+			}
+		});
+	}
 
 	@Test
 	public void testConnection() {
