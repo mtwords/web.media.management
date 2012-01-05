@@ -3,8 +3,8 @@ package ch.i10a.media.management;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
-import org.zkoss.zul.Button;
 import org.zkoss.zul.Label;
+import org.zkoss.zul.api.Grid;
 
 import ch.i10a.media.management.util.MediaManagementUtil;
 
@@ -13,14 +13,14 @@ public class StartSiteComposer extends GenericForwardComposer {
 	/*
 	 * Definition der Komponenten. Name muss sich mit der jeweiligen "id" des Elements decken. 
 	 */
-	Label eastLabel;
-	Label northLabel;
-	Label westLabel;
-	Label southLabel;
-	Button button;
+	Grid stateGrid;
+	Label numOfMovies;
+	Label numOfSeries;
+	Label numOfEpisodes;
+	Grid historyGrid;
 
 	// Data
-	int clickCount;
+	
 
 	public StartSiteComposer() {
 		/*
@@ -29,7 +29,6 @@ public class StartSiteComposer extends GenericForwardComposer {
 		 * Siehe doAfterCompose(...)
 		 * Daten hingegen sollten hier geladen / initialisiert werden.
 		 */
-		clickCount = 0;
 	}
 
 	/*

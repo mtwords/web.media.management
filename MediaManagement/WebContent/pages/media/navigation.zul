@@ -20,7 +20,7 @@
 			<h:div id="searchField">
 				<label value="${c:l('field.search')}" />
 				<combobox id="categorieChooser" width="100px"/>
-				<textbox id="searchBox" />
+				<textbox id="searchBox" mold="rounded" />
 				<button id="searchBtn" label="search" />
 			</h:div>
 		</h:div>

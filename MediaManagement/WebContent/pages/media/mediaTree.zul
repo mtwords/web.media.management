@@ -1,0 +1,9 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<?import src="includes/header.zul" directives="*" ?>
+<zk>
+	<panel title="${c:l('panel.media_tree.title')}" height="100%" apply="ch.i10a.media.management.MediaTreeComposer">
+		<panelchildren>
+			<tree id="mediaTree" />
+		</panelchildren>
+	</panel>
+</zk>

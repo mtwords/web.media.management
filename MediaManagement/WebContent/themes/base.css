@@ -1,4 +1,8 @@
 /* general */
+body {
+	font-family: arial,sans-serif;
+}
+
 ul li {
 	display: inline;
 	list-style: none;
@@ -15,6 +19,7 @@ a:visited {
 div#navigation {
 	position: absolute;
 	overflow: visible;
+	background-color: lightblue;
 	width: 100%;
 	top: 50px;
 }
@@ -30,7 +35,7 @@ li.navigationLi {
 	padding-bottom: 8px;
 }
 li.navigationLi:hover {
-	background-color: lightblue;
+	background-color: white;
 }
 a.navigationLink {
 	margin: 5px;
@@ -43,6 +48,12 @@ div#searchField {
 	margin: 5px;
 }
 
+/* Testing
+.searchTextField {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAAAXCAYAAABd50CQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABD5JREFUeNrsnE1LG1EUhk8yycQYozQSFT8iko3gRtBNtV1osRQKQvs7Ci0I/RGCUKH/ojuXCSkWQXeSheImRqiKH9EUo9FkNLHnvc0NQ5rEduVEzgsXJzM3EcJzPu+9cd3f31Mj7e3uzvGfeR7PeYR5REgkcr5+8sjw2OCxMhKNxhtNdNUzAAZ/lv8suVyuccPjIY/XS4bbTW7DIL4nX6/IsQLP5VKJSuUy3d3eUunuDveS/GiBDeF7UwNg8A0Fvtv90TRN8rW1kYcNwA34eQj8opYxAjYAjDs2gGKhQJZl0X25vFwxhNJfBlCB/xt7/HeBjg7ystcH/AZ7fTv8YgQip8NvN4ISRwMYwS1Hg/zVFSLCCj9+r43AY3vvIuAPdnYSvD8MoNbzC/yiVjMCOHC7I7/M5ebZCBYRCaoRADk/P0wEu7qojdMewG9U8n2BXtTqxoCBSIAoUOB06PLiAtHhFWoCd2Xeks/vJ5/PV4Vfcn7RUxAYBstgGmyDcbAO5tXzdCr1wm0Ya89CIeX9ES7E84uc4LntDOrXx8fHlEwm6ezsTOX4gUCAhoeHaWJiogp87Xu1dFGMKPArm0W36CVqgHnk/LrbI/CLnJjPg8lMJkOrq6sK4JGREeXNDw4OaGtrS3V5pqamGsJvjwZgHdGgWCq9hQHMmvxBkvaInJa62GFGDg/PD/hnZmYoEomoZ/DosViM0uk0RaNR6u3trRtBatMhZDvFQuENaoABu/cXiZxYxALao6Mj6u/vr8IP4f7o6KgyhHw+Xy14H6oJwDwrAgMIGbLCK3JoDaAjgR1ezaqegxRevwb84Pmh6GL8MYAQDCBr/wcikZNSIAjQo4XZ3d2tcn4UwHZeU6mUug4Gg9qzN60DbLXFBWYfcjXc1yhvEokeU9qjo2gdGxtT8MfjcXXd3t6ucv/T01PSjRzd7dGG06ioxh4h1h5m/CgWi9RsV6hI9FgpECDWbKLdOT09ra43NzdpfX1d1QV+v5/AcCKRUAaidzA0+2zMZ8XVOoDH613r4epZb38QiZxiBPU6Qjc3N5TL5ZSnRysUqQ86RNvb2yoqoEsUDofrfibeg3Tq9OQEu0XVOsAGXySv8/lx7AOSdQCRkyJArRFA8PgY9jmTk5MK7p2dHRUF6hmA3iDHrAN+bJHe0HuB5rymGQv39EgUEDnOAGoK1+prwKxbpFr7+/s0ODjYcCUY3j/DNcOtZb3GQRlFOi74xjKWh1F06CJCJHrMLlBtN6c2O9GLWnYNDQ01hB9sg3Gwrk+J2V39ws319Ur2/LxqBFIYi55CJNHwg20wTpWt0Mqo6pwI+2Ka5ocOrgew0UjOA4hatXjW8GOF+IqLZsuyvvLtT3VPhNlVOQy/aPp84yg29NFIWTEWtQL8+hQYjkKiY2QViyh4P9c7HO/6j1+FGODRJ1+xqAV0zOOQ/uFXIX4LMAAYGmO2dDB/YAAAAABJRU5ErkJggg==") no-repeat scroll 0 0 transparent;
+}
+*/
+
 /* Main starting page */
 div#welcomeTitle {
 	margin: 20px;
@@ -50,7 +61,62 @@ div#welcomeTitle {
 	font-weight: bold;
 	text-align: center;
 }
-.mainState {
+.mainPageGrid {
 	margin-left: 20%;
 	margin-right: 20%;
+}
+
+/* Main media page */
+#mainMediaContent {
+	margin: 10px;
+	height: 100%;
+	border: thin solid black;
+}
+
+#mediaContentDescription {
+	margin: 5px;
+	float: left;
+	width: 60%;
+	height: 100%;
+	border: thin solid black;
+}
+
+#mediaContentRating {
+	margin: 5px;
+	float: right;
+	width: 38%;
+	height: 100%;
+	border: thin solid black;
+}
+
+#mediaContentImage {
+	position: relative;
+	height: 200px;
+	border: thin solid black;	
+}
+
+#mediaContentDescComment {
+	position: relative;
+	border: thin solid black;
+}
+
+.mediaThumbnail {
+	background-image: url(../images/mario_1up.jpeg);
+	background-repeat: no-repeat;
+	width: 199px;
+	height: 200px;
+}
+
+.title1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.title2 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.z-panel {
+	padding: 5px;
 }

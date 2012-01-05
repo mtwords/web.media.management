@@ -1,0 +1,41 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<?import src="includes/header.zul" directives="*" ?>
+<zk xmlns:h="http://www.w3.org/1999/xhtml" apply="ch.i10a.media.management.StartSiteComposer">
+	<h:div>
+		<h:div id="welcomeTitle">
+			${c:l('field.main.welcome')}
+		</h:div>
+		<panel title="${c:l('field.main.state')}" sclass="mainPageGrid">
+			<panelchildren>
+				<grid id="stateGrid">
+					<rows>
+						<row>
+							<label value="${c:l('field.main.state.num_of_movies')}" />
+							<label id="numOfMovies" />
+						</row>
+						<row>
+							<label value="${c:l('field.main.state.num_of_series')}" />
+							<label id="numOfSeries" />
+						</row>
+						<row>
+							<label value="${c:l('field.main.state.num_of_episodes')}" />
+							<label id="numOfEpisodes" />
+						</row>
+					</rows>
+				</grid>
+			</panelchildren>
+		</panel>
+		<separator />
+		<panel title="${c:l('field.main.history.title')}" sclass="mainPageGrid">
+			<panelchildren>
+				<grid id="historyGrid">
+					<columns>
+						<column label="${c:l('field.main.history.newest_medias')}" />
+						<column label="${c:l('field.main.history.latest_views')}" />
+						<column label="${c:l('field.main.history.latest_edits')}" />
+					</columns>
+				</grid>
+			</panelchildren>
+		</panel>
+	</h:div>
+</zk>
