@@ -1,6 +1,6 @@
 <?page title="" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:h="http://www.w3.org/1999/xhtml">
-	<borderlayout apply="ch.i10a.media.management.MediaDetailComposer">
+	<borderlayout apply="ch.i10a.media.management.EditMediaDetailComposer">
 		<center>
 			<div>
 				<panel border="normal" height="200px">

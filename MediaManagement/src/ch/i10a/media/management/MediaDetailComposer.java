@@ -31,11 +31,17 @@ public class MediaDetailComposer extends GenericForwardComposer {
 		// TODO: Laden des entsprechenden Films
 		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
 		dao.load();
+		
 	}
 
 	@Override
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
 		// TODO: Initialisations
+		
+	}
+	
+	public void onLoad$mediaName(){
+		mediaName.setValue("TEST");
 	}
 }
