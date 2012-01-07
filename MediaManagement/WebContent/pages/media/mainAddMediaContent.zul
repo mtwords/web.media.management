@@ -1,27 +1,58 @@
 <?page title="" contentType="text/html;charset=UTF-8"?>
 <zk xmlns:h="http://www.w3.org/1999/xhtml">
-	<borderlayout apply="ch.i10a.media.management.MediaDetailComposer">
+	<borderlayout apply="ch.i10a.media.management.EditMediaDetailComposer">
 		<center>
 			<div>
-				<panel border="normal" height="200px">
+			<panel border="normal" height="220px">
 					<panelchildren>
 						<hbox>
-							<iframe id="thumbnail" sclass="mediaThumbnail" />
-							<vbox>
-								<label id="mediaName" value="Title" sclass="title1" />
-								<label id="mediaShortInfo" value="Year..., Genre..., ..."/>
-							</vbox>
+								<vbox>
+								<button label="Filmbild raufladen" id="uploadButton" upload="true,maxsize=300">
+								 
+							        <attribute name="onUpload"><![CDATA[
+							            org.zkoss.util.media.Media media = event.getMedia();
+							            if (media instanceof org.zkoss.image.Image) {
+							                org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+							               
+							                image.setParent(pics);
+							            } else {
+							                Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+							                break;
+							            }
+							        ]]></attribute>
+							        
+							    </button>
+							    
+								<iframe id="thumbnail" sclass="mediaThumbnail" />
+								<vlayout id="pics" height="360px" style="overflow:auto" />
+							     </vbox>
+								<vbox>
+								<separator />
+								<label value="Title" sclass="" />
+								<textbox id="mediaName" multiline="true" readonly="false" width="100%" rows="1" />
+								<label value="Jahr"/>
+								<textbox id="year" multiline="true" readonly="false" width="100%" rows="1" />
+								
+								<label value="Kategorie" />
+								<combobox id="categorieChooser2" width="100%" />
+								<label value="Filmlänge" />
+								<textbox id="movieTime" multiline="true" readonly="false" width="100%" rows="1" />
+								</vbox>
+							
 						</hbox>
 					</panelchildren>
 				</panel>
-				<panel border="normal">
+				<panel border="normal" height="100%">
 					<panelchildren>
-						<vbox>
-							<label value="${c:l('field.media.detail.description')}" sclass="title2" />
-							<textbox id="description" multiline="true" readonly="true" width="100%" rows="10" />
-							<label value="${c:l('field.media.detail.comment')}" sclass="title2" />
-							<textbox id="comment" multiline="true" readonly="true" cols="80" rows="10" />
-						</vbox>
+						<hbox>
+							<vbox>
+							
+								<label value="Beschreibung" sclass="title2" />
+								<textbox id="description" multiline="true" readonly="false" width="100%" rows="5" />
+								<label value="Kommentar" sclass="title2" />
+								<textbox id="comment" multiline="true" readonly="false" cols="80" rows="5" />
+							</vbox>
+						</hbox>
 					</panelchildren>
 				</panel>
 			</div>
@@ -29,19 +60,10 @@
 		<east width="40%">
 			<panel>
 				<panelchildren>
-					<vbox>
-						<button id="edit" label="${c:l('field.media.detail.edit')}" />
-						<separator />
-						<hbox>
-							<label value="${c:l('field.media.detail.ratings')}" />
-							<label id="ratings" value="X"/>
-						</hbox>
-						<hbox>
-							<label value="${c:l('field.media.detail.rate_it')}" />
-							<combobox id="rateIt" />
-						</hbox>
-						<separator />
-						<button id="playIt" width="200px" height="50px" label="${c:l('field.media.detail.play_it')}" />
+					<vbox>	
+						<button id="getIMDBInfo" width="200px" height="50px" label="Infos von IMDB holen" />	
+						<button id="mediaSave" width="200px" height="50px" label="Speichern" />
+						<button id="mediaDelete" width="200px" height="50px" label="Löschen" /> 
 					</vbox>
 				</panelchildren>
 			</panel>

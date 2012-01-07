@@ -14,5 +14,6 @@ public interface ISystemConst {
 	// Page consts
 	public static final String PAGE_MAIN_START_CONTENT = "/pages/media/mainStartContent.zul";
 	public static final String PAGE_MAIN_MEDIA_CONTENT = "/pages/media/mainMediaContent.zul";
+	public static final String PAGE_MAIN_ADDMEDIA_CONTENT = "/pages/media/mainAddMediaContent.zul";
 	public static final String PAGE_MAIN_NAVI_CONTENT = "/pages/media/navigation.zul";
 }

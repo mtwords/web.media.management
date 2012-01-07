@@ -22,7 +22,7 @@ public class NavigationComposer extends GenericForwardComposer {
 	Textbox searchBox;
 	Combobox categorieChooser;
 	Button searchBtn;
-	Toolbarbutton tbhistory;
+	Toolbarbutton tbHistory;
 	Toolbarbutton tbHome;
 	Toolbarbutton tbMedia;
 	Comboitem ciAction;
@@ -49,10 +49,10 @@ public class NavigationComposer extends GenericForwardComposer {
 	
 	public void onClick$tbMedia(){
 		
-		MediaManagementUtil.updateMainContent(ISystemConst.PAGE_MAIN_MEDIA_CONTENT);
+		MediaManagementUtil.updateMainContent(ISystemConst.PAGE_MAIN_ADDMEDIA_CONTENT);
 	}
 	
-	public void onClick$tbhistory(){
+	public void onClick$tbHistory(){
 		
 		MediaManagementUtil.updateMainContent(ISystemConst.PAGE_MAIN_START_CONTENT);
 	}

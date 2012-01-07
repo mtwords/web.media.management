@@ -40,8 +40,5 @@ public class MediaDetailComposer extends GenericForwardComposer {
 		// TODO: Initialisations
 		
 	}
-	
-	public void onLoad$mediaName(){
-		mediaName.setValue("TEST");
-	}
+
 }
