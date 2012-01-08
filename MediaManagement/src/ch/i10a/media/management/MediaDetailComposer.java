@@ -8,9 +8,15 @@ import org.zkoss.zul.Label;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.api.Combobox;
 
+import ch.i10a.media.common.DBException;
 import ch.i10a.media.database.dao.DaoFactory;
 import ch.i10a.media.database.dao.IDao;
 
+/**
+ * Class to handle, render and manage the site holding details about a media.
+ * @author PK, OA
+ *
+ */
 public class MediaDetailComposer extends GenericForwardComposer {
 
 	// Components
@@ -27,10 +33,10 @@ public class MediaDetailComposer extends GenericForwardComposer {
 	// Data
 	
 
-	public MediaDetailComposer() {
+	public MediaDetailComposer() throws DBException {
 		// TODO: Laden des entsprechenden Films
 		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
-		dao.load();
+		dao.load(null);
 		
 	}
 

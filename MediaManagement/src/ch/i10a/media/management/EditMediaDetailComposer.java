@@ -1,20 +1,19 @@
 package ch.i10a.media.management;
 
-import org.zkoss.idom.Element;
-import org.zkoss.image.Image;
-import org.zkoss.util.media.Media;
 import org.zkoss.zk.ui.Component;
+<<<<<<< HEAD
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.event.UploadEvent;
+=======
+>>>>>>> f6973405dcdb5f3a76c4ffc0f62581580c3f5ec3
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Iframe;
-import org.zkoss.zul.Label;
 import org.zkoss.zul.ListModelList;
-import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.api.Combobox;
 
+import ch.i10a.media.common.DBException;
 import ch.i10a.media.database.dao.DaoFactory;
 import ch.i10a.media.database.dao.IDao;
 
@@ -30,10 +29,10 @@ public class EditMediaDetailComposer extends GenericForwardComposer {
 	
 	// Data
 	
-	public EditMediaDetailComposer() {
+	public EditMediaDetailComposer() throws DBException {
 		// TODO: Laden des entsprechenden Films
 		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
-		dao.load();
+		dao.load(null);
 	}
 
 	@Override

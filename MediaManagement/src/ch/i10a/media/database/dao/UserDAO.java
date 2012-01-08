@@ -1,6 +1,6 @@
 package ch.i10a.media.database.dao;
 
-public class UserDAO implements IDao {
+public class UserDAO extends AbstractDAO {
 
 	@Override
 	public void save(Object rec) {
@@ -21,7 +21,7 @@ public class UserDAO implements IDao {
 	}
 
 	@Override
-	public Object load() {
+	public Object load(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,7 +1,6 @@
 package ch.i10a.media.management.util;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 
 import org.zkoss.zk.ui.Component;
