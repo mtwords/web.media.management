@@ -5,6 +5,7 @@ import org.zkoss.image.Image;
 import org.zkoss.util.media.Media;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Events;
+import org.zkoss.zk.ui.event.UploadEvent;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Iframe;
@@ -52,17 +53,22 @@ public class EditMediaDetailComposer extends GenericForwardComposer {
 		description.setText("");
 		
 	}
-//	public void onClick$uploadButton(){
-//		 Media media = event.getMedia();
-//         if (media instanceof org.zkoss.image.Image) {
-//             org.zkoss.zul.Image image = new org.zkoss.zul.Image();
-//             image.setContent((Image) media);
-//             thumbnail.setParent(image);
-//             
-//         } else {
-//             Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
-//             break;
-//         }
-//		
-//	}
+	public void onUpload$uploadButton(UploadEvent event){
+		Media media = event.getMedia();
+		media.getByteData();
+		thumbnail.setContent(media);
+	}
+		
+		/* Media media = event.getMedia();
+         if (media instanceof org.zkoss.image.Image) {
+             org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+             image.setContent((Image) media);
+             thumbnail.setParent(image);
+             
+         } else {
+             Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+             break;
+         }
+		*/
+	
 }

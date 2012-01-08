@@ -105,7 +105,7 @@ div#welcomeTitle {
 }
 
 .mediaThumbnail {
-	background-image: url(../images/mario_1up.jpeg);
+/*	background-image: url(../images/mario_1up.jpeg);*/
 	background-repeat: no-repeat;
 	width: 199px;
 	height: 200px;
