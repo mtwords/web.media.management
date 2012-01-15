@@ -5,6 +5,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
 
 /**
  * Class for general and reusable helpers.
@@ -25,6 +29,14 @@ public class UtilLib {
 	}
 	public static String[] convertStringToArray(String s) {
 		return s.split(",");
+	}
+
+	public static String convertUTFStringToISO(String s) throws UnsupportedEncodingException {
+		Charset iso88591charset = Charset.forName("ISO-8859-1");
+
+		String isoString = new String(s.getBytes(iso88591charset), iso88591charset);
+		// Finally remove UTF-16-BOM which was replaced by '?'!
+		return isoString.substring(1);
 	}
 
 	public static byte[] convertToByteArray(String filePath) throws IOException {

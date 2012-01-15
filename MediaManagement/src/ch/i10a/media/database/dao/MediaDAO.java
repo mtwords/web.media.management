@@ -25,6 +25,7 @@ public class MediaDAO extends AbstractDAO {
 
 		if (dto.getMovieRec() != null) {
 			saveMovie(dto);
+			saveCategorie(dto);
 		}
 		if (dto.getEpisodeRec() != null) {
 			saveEpisode(dto);
@@ -112,7 +113,7 @@ public class MediaDAO extends AbstractDAO {
 			ps = connection.prepareStatement("insert into category(category, mId) "
 							+ "values(?,(Select mId from movie where title = '" + dto.getMovieRec().getTitle() + "'))");
 
-			ps.setString(1, "Comedy");
+			ps.setString(1, dto.getMovieRec().getTitle());
 
 			ps.executeUpdate();
 		} catch (ClassNotFoundException ex) {
@@ -139,7 +140,7 @@ public class MediaDAO extends AbstractDAO {
 			connection = getConnection();
 
 			ps = connection.prepareStatement("insert into language(lang, mId) "
-					+ "values(?,(Select mId from movie where title = '" + dto.getMovieRec().getTitle() + "'))");
+					+ "values(?,(Select mId from movie where title =  '" + dto.getMovieRec().getTitle() + "'))");
 
 			ps.setString(1, "E");
 		
@@ -180,23 +181,26 @@ public class MediaDAO extends AbstractDAO {
 
 		try {
 			con = getConnection();
-			ps = con.prepareStatement("﻿SELECT * FROM 'movie' where title like 'name'");
+			ps = con.prepareStatement(UtilLib.convertUTFStringToISO("﻿SELECT * FROM movie WHERE title = ?"));
+			ps.setString(1, name);
 			rs = ps.executeQuery();
 
-			int i = 1;
-			dto.getMovieRec().setMovieId(rs.getInt(i++));
-			dto.getMovieRec().setTitle(rs.getString(i++));
-			dto.getMovieRec().setOriginalTitle(rs.getString(i++));
-			dto.getMovieRec().setDuration(rs.getInt(i++));
-			dto.getMovieRec().setIcon(UtilLib.convertToByteArray(rs.getBinaryStream(i++)));
-			dto.getMovieRec().setThumbnail(UtilLib.convertToByteArray(rs.getBinaryStream(i++)));
-			dto.getMovieRec().setType(rs.getInt(i++));
-			dto.getMovieRec().setSearchTerms(UtilLib.convertStringToArray(rs.getString(i++)));
-			dto.getMovieRec().setDescription(rs.getString(i++));
+			while (rs.next()) {
+				int i = 1;
+				dto.getMovieRec().setMovieId(rs.getInt(i++));
+				dto.getMovieRec().setTitle(rs.getString(i++));
+				dto.getMovieRec().setOriginalTitle(rs.getString(i++));
+				dto.getMovieRec().setDuration(rs.getInt(i++));
+				dto.getMovieRec().setIcon(UtilLib.convertToByteArray(rs.getBinaryStream(i++)));
+				dto.getMovieRec().setThumbnail(UtilLib.convertToByteArray(rs.getBinaryStream(i++)));
+				dto.getMovieRec().setType(rs.getInt(i++));
+				dto.getMovieRec().setSearchTerms(UtilLib.convertStringToArray(rs.getString(i++)));
+				dto.getMovieRec().setDescription(rs.getString(i++));
+			}
 		} catch (ClassNotFoundException ex) {
 			throw new DBException("err.db.driver_could_not_be_loaded");
 		} catch (SQLException ex) {
-			throw new DBException("err.db.statement_failed");
+			throw new DBException("err.db.statement_failed", ex);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -207,7 +211,7 @@ public class MediaDAO extends AbstractDAO {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return dto;
 	}
 
 }

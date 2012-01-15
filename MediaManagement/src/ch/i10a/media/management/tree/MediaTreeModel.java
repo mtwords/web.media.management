@@ -12,7 +12,7 @@ public class MediaTreeModel extends AbstractTreeModel {
 
 	@Override
 	public boolean isLeaf(Object node) {
-		return !((File) getRoot()).isDirectory();
+		return !((File) node).isDirectory();
 	}
 
 	@Override
