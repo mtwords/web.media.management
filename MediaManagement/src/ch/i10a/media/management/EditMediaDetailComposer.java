@@ -32,8 +32,8 @@ public class EditMediaDetailComposer extends GenericForwardComposer {
 	
 	public EditMediaDetailComposer() throws DBException {
 		// TODO: Laden des entsprechenden Films
-		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
-		dao.load(null);
+//		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
+//		dao.load(null);
 	}
 
 	@Override
