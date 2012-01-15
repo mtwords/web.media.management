@@ -9,6 +9,7 @@ import org.zkoss.zul.Textbox;
 import org.zkoss.zul.api.Combobox;
 
 import ch.i10a.media.common.DBException;
+import ch.i10a.media.database.MediaDTO;
 import ch.i10a.media.database.dao.DaoFactory;
 import ch.i10a.media.database.dao.IDao;
 
@@ -29,14 +30,17 @@ public class MediaDetailComposer extends GenericForwardComposer {
 	Label ratings;
 	Combobox rateIt;
 	Button playIt;
+	MediaDTO mediaDTO;
 
 	// Data
 	
 
 	public MediaDetailComposer() throws DBException {
 		// TODO: Laden des entsprechenden Films
-//		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
-//		dao.load(null);
+		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
+		mediaDTO = (MediaDTO) dao.load("Hot Fuzz");
+		
+		
 		
 	}
 
@@ -44,7 +48,13 @@ public class MediaDetailComposer extends GenericForwardComposer {
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
 		// TODO: Initialisations
+		description.setText(mediaDTO.getMovieRec().getTitle());
+		
 		
 	}
-
+	
+	public void onClick$mediaDelete(){
+		
+		
+	}
 }

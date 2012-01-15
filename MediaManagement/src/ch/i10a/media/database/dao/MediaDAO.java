@@ -25,6 +25,7 @@ public class MediaDAO extends AbstractDAO {
 
 		if (dto.getMovieRec() != null) {
 			saveMovie(dto);
+			saveCategorie(dto);
 		}
 		if (dto.getEpisodeRec() != null) {
 			saveEpisode(dto);
@@ -112,7 +113,7 @@ public class MediaDAO extends AbstractDAO {
 			ps = connection.prepareStatement("insert into category(category, mId) "
 							+ "values(?,(Select mId from movie where title = '" + dto.getMovieRec().getTitle() + "'))");
 
-			ps.setString(1, "Comedy");
+			ps.setString(1, dto.getMovieRec().getTitle());
 
 			ps.executeUpdate();
 		} catch (ClassNotFoundException ex) {
@@ -139,7 +140,7 @@ public class MediaDAO extends AbstractDAO {
 			connection = getConnection();
 
 			ps = connection.prepareStatement("insert into language(lang, mId) "
-					+ "values(?,(Select mId from movie where title = '" + dto.getMovieRec().getTitle() + "'))");
+					+ "values(?,(Select mId from movie where title =  '" + dto.getMovieRec().getTitle() + "'))");
 
 			ps.setString(1, "E");
 		
@@ -180,7 +181,7 @@ public class MediaDAO extends AbstractDAO {
 
 		try {
 			con = getConnection();
-			ps = con.prepareStatement("﻿SELECT * FROM 'movie' where title like 'name'");
+			ps = con.prepareStatement("﻿SELECT * FROM 'movie' where title = \"" + name +"\"");
 			rs = ps.executeQuery();
 
 			int i = 1;
@@ -207,7 +208,7 @@ public class MediaDAO extends AbstractDAO {
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return dto;
 	}
 
 }

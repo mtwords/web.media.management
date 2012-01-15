@@ -18,13 +18,15 @@
 								<separator />
 								<label value="Title" sclass="" />
 								<textbox id="mediaName" multiline="true" readonly="false" width="100%" rows="1" />
+								<label value="Title" sclass="" />
+								<textbox id="mediaNameOri" multiline="true" readonly="false" width="100%" rows="1" />
 								<label value="Jahr"/>
-								<textbox id="year" multiline="true" readonly="false" width="100%" rows="1" />
+								<intbox id="year" constraint="no negative" width="100%" />
 								
 								<label value="Kategorie" />
 								<combobox id="categorieChooser2" width="100%" />
 								<label value="Filmlänge" />
-								<textbox id="movieTime" multiline="true" readonly="false" width="100%" rows="1" />
+								<intbox id="movieTime" readonly="no negative" width="100%" />
 								</vbox>
 							
 						</hbox>
@@ -39,6 +41,8 @@
 								<textbox id="description" multiline="true" readonly="false" width="100%" rows="5" />
 								<label value="Kommentar" sclass="title2" />
 								<textbox id="comment" multiline="true" readonly="false" cols="80" rows="5" />
+								<label value="Such Begriffe" sclass="title2" />
+								<textbox id="searchKeys" multiline="true" readonly="false" cols="80" rows="5" />
 							</vbox>
 						</hbox>
 					</panelchildren>
