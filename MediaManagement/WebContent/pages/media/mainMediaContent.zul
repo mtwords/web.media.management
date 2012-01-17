@@ -6,7 +6,7 @@
 				<panel border="normal" height="200px">
 					<panelchildren>
 						<hbox>
-							<iframe id="thumbnail" sclass="mediaThumbnail" />
+							<image id="thumbnail" sclass="mediaThumbnail" />
 							<vbox>
 								<label id="mediaName" value="Title" sclass="title1" />
 								<label id="mediaShortInfo" value="Year..., Genre..., ..."/>

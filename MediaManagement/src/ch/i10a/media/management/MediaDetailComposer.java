@@ -2,13 +2,14 @@ package ch.i10a.media.management;
 
 import java.util.Map;
 
-import org.zkoss.image.Image;
+import org.zkoss.image.AImage;
 import org.zkoss.util.media.Media;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Iframe;
+import org.zkoss.zul.Image;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.api.Combobox;
@@ -28,7 +29,7 @@ import ch.i10a.media.management.util.MediaManagementUtil;
 public class MediaDetailComposer extends GenericForwardComposer {
 
 	// Components
-	Iframe thumbnail;
+	Image thumbnail;
 	Label mediaName;
 	Label mediaShortInfo;
 	Textbox description;
@@ -38,6 +39,7 @@ public class MediaDetailComposer extends GenericForwardComposer {
 	Combobox rateIt;
 	Button playIt;
 	MediaDTO mediaDTO;
+	
 	byte[] thumbnailByte;
 
 	// Data
@@ -60,6 +62,9 @@ public class MediaDetailComposer extends GenericForwardComposer {
 		thumbnailByte = mediaDTO.getMovieRec().getThumbnail();
 		mediaShortInfo.setValue("Kategorie: " + mediaDTO.getMovieRec().getGenre() + "  " + 
 				"Spieldauer: " + mediaDTO.getMovieRec().getDuration() + " min");
+		thumbnail.setContent(new AImage("name",thumbnailByte));
+		
+		
 	}
 	
 	public void onClick$mediaDelete(){
