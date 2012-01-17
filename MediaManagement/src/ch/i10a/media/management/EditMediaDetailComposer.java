@@ -1,9 +1,11 @@
 package ch.i10a.media.management;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.zkoss.util.media.Media;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
 
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.event.UploadEvent;
@@ -18,6 +20,7 @@ import org.zkoss.zul.Textbox;
 import org.zkoss.zul.api.Combobox;
 
 import ch.i10a.media.common.DBException;
+import ch.i10a.media.common.ISystemConst;
 import ch.i10a.media.common.UtilLib;
 import ch.i10a.media.database.MediaDTO;
 import ch.i10a.media.database.MovieRec;
@@ -33,6 +36,7 @@ public class EditMediaDetailComposer extends GenericForwardComposer {
 	Button mediaDelete;
 	Textbox description;
 	MediaDTO mediaDTO;
+	MediaDTO mediaDTO2;
 	Button mediaSave;
 	Textbox mediaName;
 	Textbox mediaNameOri;
@@ -48,6 +52,11 @@ public class EditMediaDetailComposer extends GenericForwardComposer {
 		// TODO: Laden des entsprechenden Films
 //		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
 //		dao.load(null);
+		Map<String, String> arguments = Executions.getCurrent().getArg();
+		IDao dao = DaoFactory.loadDaoStrategy(DaoFactory.TYPE_MEDIA);
+		mediaDTO2 = new MediaDTO();
+		mediaDTO2 = (MediaDTO) dao.load(arguments.get(ISystemConst.PARAM_MEDIA_NAME));
+		
 	}
 
 	@Override
@@ -62,7 +71,11 @@ public class EditMediaDetailComposer extends GenericForwardComposer {
         model.add("Horror");
         model.add("Comedy");
         categorieChooser2.setModel(model);
-        description.setValue("TEST2");
+		description.setText(mediaDTO2.getMovieRec().getDescription());
+		mediaName.setText(mediaDTO2.getMovieRec().getTitle());
+		movieTime.setValue(mediaDTO2.getMovieRec().getDuration());
+		mediaNameOri.setText(mediaDTO2.getMovieRec().getOriginalTitle());
+		//searchKeys.setText(mediaDTO2.getMovieRec().getSearchTerms()[0]);
 	}
 	
 	public void onClick$mediaSave() throws IOException, DBException{

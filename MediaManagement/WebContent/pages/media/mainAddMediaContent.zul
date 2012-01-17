@@ -18,7 +18,7 @@
 								<separator />
 								<label value="Title" sclass="" />
 								<textbox id="mediaName" multiline="true" readonly="false" width="100%" rows="1" />
-								<label value="Title" sclass="" />
+								<label value="OrignalTitle" sclass="" />
 								<textbox id="mediaNameOri" multiline="true" readonly="false" width="100%" rows="1" />
 								<label value="Jahr"/>
 								<intbox id="year" constraint="no negative" width="100%" />

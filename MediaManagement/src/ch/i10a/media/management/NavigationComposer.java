@@ -2,8 +2,10 @@ package ch.i10a.media.management;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
@@ -15,6 +17,9 @@ import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Toolbarbutton;
 
 import ch.i10a.media.common.ISystemConst;
+import ch.i10a.media.database.MediaDTO;
+import ch.i10a.media.database.dao.DaoFactory;
+import ch.i10a.media.database.dao.IDao;
 import ch.i10a.media.management.util.MediaManagementUtil;
 
 public class NavigationComposer extends GenericForwardComposer {
@@ -26,6 +31,7 @@ public class NavigationComposer extends GenericForwardComposer {
 	Toolbarbutton tbHome;
 	Toolbarbutton tbMedia;
 	Comboitem ciAction;
+	String mediaName;
 	
 	
 
@@ -59,8 +65,10 @@ public class NavigationComposer extends GenericForwardComposer {
 	
 	public void onClick$searchBtn() {
 		
-		searchBox.setText("Film wird gesucht. Kategorie: " + categorieChooser.getValue());
-		
+		//searchBox.setText("Film wird gesucht. Kategorie: " + categorieChooser.getValue());
+		mediaName = searchBox.getText();
+		MediaManagementUtil.updateMainContent(ISystemConst.PAGE_MAIN_MEDIA_CONTENT, mediaName);
+
 		//MediaManagementUtil.updateMainContent();
 	}
 
