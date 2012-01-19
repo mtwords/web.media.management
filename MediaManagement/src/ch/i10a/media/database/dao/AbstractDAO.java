@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Class for importing the database drivers and establish a connection the the database
+ */
 public abstract class AbstractDAO implements IDao {
 
 	// ------------------ connection things ------------------

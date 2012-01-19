@@ -71,6 +71,10 @@ public class MediaDAO extends AbstractDAO {
 			}
 		}
 	}
+	/**
+	 * Saves an episode record to the database
+	 * @throws DBException
+	 */
 	private void saveEpisode(MediaDTO dto) throws DBException {
 		PreparedStatement ps = null;
 		Connection connection = null;
@@ -171,6 +175,9 @@ public class MediaDAO extends AbstractDAO {
 
 	}
 
+	/**
+	 * Loads a records from the database
+	 */
 	@Override
 	public Object load(String name) throws DBException {
 		MediaDTO dto = new MediaDTO();
@@ -181,7 +188,7 @@ public class MediaDAO extends AbstractDAO {
 
 		try {
 			con = getConnection();
-			ps = con.prepareStatement(UtilLib.convertUTFStringToISO("﻿SELECT * FROM movie WHERE title = ?"));
+			ps = con.prepareStatement(UtilLib.convertUTFStringToISO("SELECT * FROM movie WHERE title = ?"));
 			ps.setString(1, name);
 			rs = ps.executeQuery();
 

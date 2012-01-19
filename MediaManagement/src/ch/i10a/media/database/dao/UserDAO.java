@@ -1,5 +1,9 @@
 package ch.i10a.media.database.dao;
 
+/**
+ * Class for the user database objects 
+ *
+ */
 public class UserDAO extends AbstractDAO {
 
 	@Override

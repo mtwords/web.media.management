@@ -1,6 +1,10 @@
 package ch.i10a.media.database.dao;
 
 
+/**
+ * Class for distinction between user and media database objects 
+ *
+ */
 public abstract class DaoFactory {
 
 	public static final int TYPE_MEDIA = 0;
