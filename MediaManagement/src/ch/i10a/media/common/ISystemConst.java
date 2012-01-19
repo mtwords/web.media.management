@@ -1,5 +1,9 @@
 package ch.i10a.media.common;
 
+/**
+ * Interface for used literal constants
+ *
+ */
 public interface ISystemConst {
 
 	// Configuration consts

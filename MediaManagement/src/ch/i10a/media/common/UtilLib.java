@@ -17,6 +17,11 @@ import java.nio.charset.Charset;
  */
 public class UtilLib {
 
+	/**
+	 * Converts a string array to one string
+	 * @param String Array for conversion
+	 * @return converted String
+	 */
 	public static String convertArrayToString(String[] array) {
 		StringBuffer sb = new StringBuffer();
 		for (int i = 0; i < array.length; i++) {
@@ -27,10 +32,21 @@ public class UtilLib {
 		}
 		return sb.toString();
 	}
+	/**
+	 * Converts a string to a String Array. Uses ',' as a delimiter
+	 * @param String to convert
+	 * @return String array delimited by ','
+	 */
 	public static String[] convertStringToArray(String s) {
 		return s.split(",");
 	}
 
+	/**
+	 * Converts a string from UTF to ISO codepage
+	 * @param s String to convert
+	 * @return ISO converted string
+	 * @throws UnsupportedEncodingException
+	 */
 	public static String convertUTFStringToISO(String s) throws UnsupportedEncodingException {
 		Charset iso88591charset = Charset.forName("ISO-8859-1");
 
@@ -39,9 +55,21 @@ public class UtilLib {
 		return isoString.substring(1);
 	}
 
+	/**
+	 * Converts a string a byte array
+	 * @param filePath String to convert
+	 * @return converted byte array
+	 * @throws IOException
+	 */
 	public static byte[] convertToByteArray(String filePath) throws IOException {
 		return convertToByteArray(new FileInputStream(new File(filePath)));
 	}
+	/**
+	 * Converts an InputStream to a byte array
+	 * @param fileIs Inputstream for reading
+	 * @return converted byte array
+	 * @throws IOException
+	 */
 	public static byte[] convertToByteArray(InputStream fileIs) throws IOException {
 		ByteArrayOutputStream byteArrOs = new ByteArrayOutputStream();
 
